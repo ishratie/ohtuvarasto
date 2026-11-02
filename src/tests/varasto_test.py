@@ -68,13 +68,13 @@ class TestVarasto(unittest.TestCase):
 
         self.assertAlmostEqual(self.varasto.saldo, 10)
 
-    def test_negatiivinen_ottaminen_tyhjentaa_varaston(self):
+    def test_negatiivinen_ottaminen_ei_muuta_saldoa(self):
         self.varasto.lisaa_varastoon(5)
 
         saatu_maara = self.varasto.ota_varastosta(-1)
 
-        self.assertAlmostEqual(saatu_maara, 5)
-        self.assertAlmostEqual(self.varasto.saldo, 0)
+        self.assertAlmostEqual(saatu_maara, 0)
+        self.assertAlmostEqual(self.varasto.saldo, 5)
 
     def test_str_palauttaa_oikean_merkkijonon(self):
         self.varasto.lisaa_varastoon(5)
