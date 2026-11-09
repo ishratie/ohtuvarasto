@@ -75,3 +75,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+def rikki(a, b, c, d, e):
+    return a
